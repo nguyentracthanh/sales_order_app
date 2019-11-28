@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:layout_margin="25dp"
+    tools:context=".Create">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/linear_login"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logo"
+            android:src="@drawable/logo"
+            android:layout_gravity="center_horizontal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register member"
+            android:textSize="60px"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User name"
+            android:textStyle="italic"
+            android:textSize="40px"/>
+
+        <EditText
+            android:id="@+id/edit_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2000"
+            android:hint="Nguyen Trac Thanh"
+            android:textSize="40px"
+            android:maxLines="4"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="Password"
+            android:maxLength="16"
+            android:textSize="40px"
+            />
+
+        <EditText
+            android:id="@+id/edit_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:inputType="textPassword"
+            android:hint="No longer 16 characters "
+            android:textSize="40px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="Confirm password"
+            android:maxLength="16"
+            android:textSize="40px"
+            />
+
+        <EditText
+            android:id="@+id/edit_repassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:inputType="textPassword"
+            android:hint="No longer 16 characters "
+            android:textSize="40px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="E-mail"
+            android:maxLength="16"
+            android:textSize="40px"
+            />
+
+        <EditText
+            android:id="@+id/edit_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:inputType="textEmailAddress"
+            android:hint="example@email.com "
+            android:textSize="40px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:text="Phone number"
+            android:maxLength="16"
+            android:textSize="40px"
+            />
+
+        <EditText
+            android:id="@+id/edit_phonenumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="2000"
+            android:maxLines="4"
+            android:inputType="phone"
+            android:hint="0987654321 "
+            android:textSize="40px"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="244dp"
+            android:layout_height="51dp"
+            android:background="@color/colorWhite"
+            android:layout_gravity="center_horizontal"
+            android:elevation="4dp"
+            android:text="Create New Account"
+            />
+    </LinearLayout>
+
+
+</FrameLayout>
