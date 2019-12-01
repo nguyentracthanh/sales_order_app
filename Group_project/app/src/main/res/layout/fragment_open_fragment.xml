@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorWhite"
     android:layout_margin="15dp"
-    tools:context=".Open_fragment">
+    tools:context=".Interface.Open_fragment">
 
     <TextView
         android:id="@+id/textView2"
@@ -166,6 +166,7 @@
         android:background="@color/colorWhite"
         android:linksClickable="true"
         android:text="Create new account"
+        android:textColor="@color/colorBlue"
         android:textAllCaps="false"
         android:textSize="30px"
         app:layout_constraintBottom_toBottomOf="parent"

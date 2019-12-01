@@ -6,7 +6,7 @@
     android:id="@+id/login_layout"
     android:background="@color/colorWhite"
     android:layout_margin="25dp"
-    tools:context=".Login">
+    tools:context=".Interface.Login">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
@@ -42,11 +42,11 @@
             android:textSize="30dp"/>
 
         <EditText
-            android:id="@+id/edit_name"
+            android:id="@+id/edit_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLength="2000"
-            android:hint="Type your user name"
+            android:hint="Type your user name or email"
             android:maxLines="4"/>
         <TextView
             android:layout_width="wrap_content"
