@@ -4,9 +4,11 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import vn.edu.usth.main.Function.Menu.MenuFragment;
+
 public class HomePagerAdapter extends FragmentPagerAdapter {
-    private final int PAGE_COUNT = 3;
-    private String titles[] = new String[] { "Home", "Foods", "Drinks" };
+    private final int PAGE_COUNT = 4;
+    private String titles[] = new String[] { "Home", "Foods", "Drinks","Profile" };
     public HomePagerAdapter(FragmentManager fm){
 
         super (fm);
@@ -24,6 +26,10 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
             case 2:
                 DrinkFragment drink_site= new DrinkFragment();
                 return drink_site;
+            case 3:
+                MenuFragment menu_site= new MenuFragment();
+                return menu_site;
+
         }
         return null; // failsafe
         }
