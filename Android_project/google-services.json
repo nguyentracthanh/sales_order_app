@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "491598013014",
+    "firebase_url": "https://orderapp-44c34.firebaseio.com",
+    "project_id": "orderapp-44c34",
+    "storage_bucket": "orderapp-44c34.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491598013014:android:c56ecac65ecf1c1a5dd1f7",
+        "android_client_info": {
+          "package_name": "vn.edu.usth.orderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491598013014-kujevudlupah064bu68kns2p1a68ejpj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.edu.usth.orderapp",
+            "certificate_hash": "1121763de37987f6ca323bb385c9d03c23337e04"
+          }
+        },
+        {
+          "client_id": "491598013014-r35e2ei0aet9p3gtu288525lc3saktla.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2FociYGsl9p0lm1xv6w25mVRTneM9yMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491598013014-r35e2ei0aet9p3gtu288525lc3saktla.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

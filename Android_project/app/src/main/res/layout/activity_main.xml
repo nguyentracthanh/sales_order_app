@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_ground"
+    android:scaleX="1"
+    android:scaleY="1"
+    tools:context="vn.edu.usth.ordernow.MainActivity">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:src="@drawable/logo"
+            android:layout_width="220dp"
+            android:layout_height="220dp"/>
+        <TextView
+            android:gravity="center"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="@string/text_slogan"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/text_slogan"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:weightSum="2"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btn_signup"
+            android:text="SignUp"
+            android:textColor="@color/colorWhite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin  ="8dp"
+            app:fButtonColor="@color/btnSignUp"
+            app:shadowColor="@color/black"
+            app:shadowEnabled="true"
+            app:shadowHeight="5dp"
+            app:cornerRadius="4dp"/>
+
+        <info.hoang8f.widget.FButton
+            android:id="@+id/btn_signin"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:text="SignIn"
+            android:textColor="@color/colorWhite"
+            app:fButtonColor="@color/btnSignActive"
+            app:cornerRadius="4dp"
+            app:shadowColor="@color/black"
+            app:shadowEnabled="true"
+            app:shadowHeight="5dp" />
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>
