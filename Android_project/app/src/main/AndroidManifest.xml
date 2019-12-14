@@ -3,20 +3,22 @@
     package="vn.edu.usth.ordernow">
 
     <application
-        android:largeHeap="true"
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name="vn.edu.usth.ordernow.SignUp" />
-        <activity android:name="vn.edu.usth.ordernow.SignIn" />
-        <activity android:name="vn.edu.usth.ordernow.MainActivity">
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".FoodList"></activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
