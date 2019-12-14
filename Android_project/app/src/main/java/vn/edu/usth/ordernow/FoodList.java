@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -57,9 +58,9 @@ public class FoodList extends AppCompatActivity {
         adapter=new FirebaseRecyclerAdapter<Food, FoodViewHolder>(Food.class,
                 R.layout.food_item,
                 FoodViewHolder.class,
-                foodlist.orderByChild("MenuId").equalTo(CategoryId)) {
+                foodlist.orderByChild("menuId").equalTo(CategoryId)) {
             @Override
-            protected void populateViewHolder(FoodViewHolder foodViewHolder, Food food, int i) {
+            protected void populateViewHolder(FoodViewHolder foodViewHolder, Food food, int position) {
                 foodViewHolder.foodName.setText(food.getName());
                 Picasso.get().load(food.getImage()).into(foodViewHolder.imageFood);
 
@@ -75,6 +76,7 @@ public class FoodList extends AppCompatActivity {
         };
 
         // Set adapter
+        Log.d("TAG",""+adapter.getItemCount());
         recyclerView.setAdapter(adapter);
     }
 }

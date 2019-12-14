@@ -59,7 +59,7 @@ public class Home extends AppCompatActivity {
 
         // Init firebase
         database=FirebaseDatabase.getInstance();
-        category=database.getReference("Category");
+        category=database.getReference("categories");
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -97,7 +97,10 @@ public class Home extends AppCompatActivity {
     }
 
     private void loadMenu() {
-       adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,R.layout.menu_item,MenuViewHolder.class,category) {
+       adapter=new FirebaseRecyclerAdapter<Category, MenuViewHolder>(Category.class,
+               R.layout.menu_item,
+               MenuViewHolder.class,
+               category) {
             @Override
             protected void populateViewHolder(MenuViewHolder menuViewHolder, Category category, int i) {
                 menuViewHolder.txtMenuName.setText(category.getName());
