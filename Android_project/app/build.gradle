@@ -52,5 +52,12 @@ dependencies {
     // Glide v4 uses this new annotation processor -- see https://bumptech.github.io/glide/doc/generatedapi.html
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 
+    //
+    implementation 'com.amulyakhare:com.amulyakhare.textdrawable:1.0.1'
+    implementation 'com.readystatesoftware.sqliteasset:sqliteassethelper:+'
+
+    //
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+
 }
 apply plugin: 'com.google.gms.google-services'

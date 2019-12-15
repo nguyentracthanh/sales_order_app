@@ -4,6 +4,22 @@ public class User {
     private String name;
     private String password;
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    private String phone;
+
+    public User(String name, String password, String phone) {
+        this.name = name;
+        this.password = password;
+        this.phone = phone;
+    }
+
     public User() {
     }
 

@@ -54,6 +54,7 @@ public class SignUp extends AppCompatActivity {
                         else {
                             mDialog.dismiss();
                             User user=new User(editName.getText().toString(),editPass.getText().toString());
+                            user.setPhone(editPhone.getText().toString());
                             table_user.child(editPhone.getText().toString()).setValue(user);
                             finish();
                         }
