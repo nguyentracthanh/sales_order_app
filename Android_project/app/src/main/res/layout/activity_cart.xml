@@ -44,7 +44,7 @@
             </LinearLayout>
 
             <info.hoang8f.widget.FButton
-                android:id="@+id/btn_Order"
+                android:id="@+id/btn_get_Order"
                 android:text="Order"
                 android:textColor="@color/colorWhite"
                 android:layout_marginRight="8dp"

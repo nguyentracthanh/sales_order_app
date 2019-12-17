@@ -9,10 +9,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,8 +20,7 @@ import java.util.List;
 import java.util.Locale;
 
 import info.hoang8f.widget.FButton;
-import okhttp3.Request;
-import vn.edu.usth.ordernow.Database.Database;
+import vn.edu.usth.ordernow.Database.Databases;
 import vn.edu.usth.ordernow.Model.Order;
 import vn.edu.usth.ordernow.Model.Requests;
 import vn.edu.usth.ordernow.ViewHolder.CartAdapter;
@@ -62,7 +58,7 @@ public class Cart extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         txtTotalprice=findViewById(R.id.total);
-        btnOrder=findViewById(R.id.btn_Order);
+        btnOrder=findViewById(R.id.btn_get_Order);
 
         btnOrder.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,8 +85,8 @@ public class Cart extends AppCompatActivity {
                 //Submit
                 requests.child(String.valueOf(System.currentTimeMillis()))
                         .setValue(request);
-                new Database(getBaseContext()).cleanCart();
-                Toast.makeText(Cart.this, "Thank you", Toast.LENGTH_SHORT).show();
+                new Databases(getBaseContext()).cleanCart();
+//                Toast.makeText(Cart.this, "Thank you", Toast.LENGTH_SHORT).show();
                 finish();
 
             }
@@ -108,7 +104,7 @@ public class Cart extends AppCompatActivity {
 
     private void loadListFood() {
 
-        cart=new Database(this).getCarts();
+        cart=new Databases(this).getCarts();
         cartAdapter=new CartAdapter(cart,this);
         recyclerView.setAdapter(cartAdapter);
 

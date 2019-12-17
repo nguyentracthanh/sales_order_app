@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -19,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import vn.edu.usth.ordernow.Database.Database;
+import vn.edu.usth.ordernow.Database.Databases;
 import vn.edu.usth.ordernow.Model.Food;
 import vn.edu.usth.ordernow.Model.Order;
 
@@ -53,14 +52,14 @@ public class FoodDetail extends AppCompatActivity {
         btnCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Database(getBaseContext()).addToCart(new Order(
+                new Databases(getBaseContext()).addToCart(new Order(
                         FoodID,
                         currentFood.getName(),
                         numberButton.getNumber(),
                         currentFood.getPrice(),
                         currentFood.getDiscount()
                 ));
-                Toast.makeText(FoodDetail.this,"Added to cart",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(FoodDetail.this,"Added to cart",Toast.LENGTH_SHORT).show();
             }
         });
 
