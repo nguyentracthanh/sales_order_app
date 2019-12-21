@@ -13,7 +13,9 @@
         android:layout_marginRight="8dp"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_signup"
+        android:id="@+id/register_space">
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,7 +27,8 @@
             android:id="@+id/editName"
             android:hint="Name"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_height="0dp"
             android:textColorHint="@color/black"
             android:textSize="32sp"
             android:inputType="text"
@@ -34,12 +37,25 @@
             app:met_maxCharacters="30"
             app:met_primaryColor="@color/black"
             app:met_singleLineEllipsis="true"/>
-
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/editEmail"
+            android:hint="Email"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textColorHint="@color/black"
+            android:textSize="32sp"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="@color/black"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/black"
+            app:met_singleLineEllipsis="true"/>
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/editPhone"
             android:hint="Phone number"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textColorHint="@color/black"
             android:textSize="32sp"
             android:inputType="phone"
@@ -52,17 +68,19 @@
 
 
 
+
         <com.rengwuxian.materialedittext.MaterialEditText
             android:id="@+id/editPass"
             android:hint="Password"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:textColorHint="@color/black"
             android:textSize="32sp"
             android:inputType="textPassword"
             app:met_baseColor="@color/black"
             app:met_floatingLabel="highlight"
-            app:met_maxCharacters="11"
+            app:met_maxCharacters="16"
             app:met_primaryColor="@color/black"
             app:met_singleLineEllipsis="true"/>
 
@@ -78,6 +96,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+
         app:fButtonColor="@color/btnSignUp"
         app:shadowColor="@color/black"
         app:shadowEnabled="true"
