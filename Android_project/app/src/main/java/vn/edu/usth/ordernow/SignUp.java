@@ -118,7 +118,7 @@ public class SignUp extends AppCompatActivity {
                         z="Please check your connection";
                     }else {
 
-                       String query="INSERT INTO staff VALUES('"+namestr+"','"+mailstr+"','"+phonestr+"','"+passstr+"')";
+                       String query="INSERT INTO staff (name,email_address,mobile_phone,password) VALUES('"+namestr+"','"+mailstr+"','"+phonestr+"','"+passstr+"');";
                        Statement statement = con.createStatement();
                        statement.executeQuery(query);
                        z="Register Successful";

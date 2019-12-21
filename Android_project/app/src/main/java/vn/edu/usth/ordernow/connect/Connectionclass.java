@@ -7,12 +7,11 @@ import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Collection;
 
 
 public class Connectionclass {
     String classs="com.mysql.jdbc.Driver";
-    String url="jdbc:mysql://192.168.1.8:3306/sales_management";
+    String url="jdbc:mysql://192.168.43.196:3306/sales_management";
     String un="aloalo";
     String password="123";
 
