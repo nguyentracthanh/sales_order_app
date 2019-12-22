@@ -15,6 +15,7 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     Button btnSignup, btnSignin;
     TextView txtSlogan;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
