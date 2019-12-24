@@ -52,8 +52,7 @@ public class SignUp extends AppCompatActivity {
 
                     AttemptLogin attemptLogin= new AttemptLogin();
                     attemptLogin.execute(editName.getText().toString(),editMail.getText().toString(),editPhone.getText().toString(),editPass.getText().toString());
-                    mDialog.setMessage("Please waiting...");
-                    mDialog.show();
+
                     finish();
 
             }
@@ -100,7 +99,6 @@ public class SignUp extends AppCompatActivity {
             params.add(new BasicNameValuePair("password", password));
 
             JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-            mDialog.dismiss();
 
             return json;
 

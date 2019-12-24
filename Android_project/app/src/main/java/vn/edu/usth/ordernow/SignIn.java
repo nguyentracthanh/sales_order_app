@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public class SignIn extends AppCompatActivity {
     EditText edtPhone, editPass;
     Button btnSignin;
-    String URL = "http://192.168.1.8/test_android/index.php";
+    String URL = "http://192.168.10.98/test_android/index.php";
     ProgressDialog mDialog;
     JSONParser jsonParser = new JSONParser();
 
@@ -131,7 +131,7 @@ public class SignIn extends AppCompatActivity {
 
 
             JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
-            
+
 
             return json;
 

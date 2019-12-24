@@ -7,62 +7,139 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    Button btnSignup, btnSignin;
-    TextView txtSlogan;
+
+    EditText editEmail, editPassword, editName, editPhone;
+    Button btnSignIn, btnRegister;
+
+    String URL= "http://192.168.10.98/test_android/index.php";
+
+    JSONParser jsonParser=new JSONParser();
+
+    int i=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        btnSignin=findViewById(R.id.btn_signin);
-        btnSignup=findViewById(R.id.btn_signup);
-        txtSlogan = findViewById(R.id.text_slogan);
-        Typeface face= Typeface.createFromAsset(getAssets(),"fonts/cambriab.ttf");
-        txtSlogan.setTypeface(face);
-        btnSignin.setOnClickListener(new View.OnClickListener(){
+        editEmail=(EditText)findViewById(R.id.editEmail);
+        editName=(EditText)findViewById(R.id.editName);
+        editPassword=(EditText)findViewById(R.id.editPassword);
+        editPhone=findViewById(R.id.editPhone);
 
+        btnSignIn=(Button)findViewById(R.id.btnSignIn);
+        btnRegister=(Button)findViewById(R.id.btnRegister);
+
+        btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
+                AttemptLogin attemptLogin= new AttemptLogin();
+                attemptLogin.execute(editName.getText().toString(),editPassword.getText().toString(),"");
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(i==0)
+                {
+                    i=1;
+                    editEmail.setVisibility(View.VISIBLE);
+                    editPhone.setVisibility(View.VISIBLE);
+                    btnSignIn.setVisibility(View.GONE);
+                    btnRegister.setText("CREATE ACCOUNT");
+                }
+                else{
+
+                    btnRegister.setText("REGISTER");
+                    editEmail.setVisibility(View.GONE);
+                    editPhone.setVisibility(View.GONE);
+                    btnSignIn.setVisibility(View.VISIBLE);
+                    i=0;
+
+                    AttemptLogin attemptLogin= new AttemptLogin();
+                    attemptLogin.execute(editName.getText().toString(),editPassword.getText().toString(),editEmail.getText().toString(),editPhone.getText().toString());
+
+                }
 
             }
         });
-        btnSignup.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
-        btnSignin.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent signIn=new Intent(MainActivity.this, SignIn.class);
-                startActivity(signIn);
-            }
-        });
-        btnSignup.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent signup=new Intent(MainActivity.this, SignUp.class);
-                startActivity(signup);
-            }
-        });
     }
-    @Override
-    public void onRequestPermissionsResult(int requestCode,
-                                           String[] permissions, int[] grantResults) {
-        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.INTERNET)
-                != PackageManager.PERMISSION_GRANTED) {
-            // Permission is not granted
+
+    private class AttemptLogin extends AsyncTask<String, String, JSONObject> {
+
+        @Override
+
+        protected void onPreExecute() {
+
+            super.onPreExecute();
+
         }
+
+        @Override
+
+        protected JSONObject doInBackground(String... args) {
+
+
+
+            String email = args[2];
+            String password = args[1];
+            String name= args[0];
+            String phone=args[2];
+
+            ArrayList<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("username", name));
+            params.add(new BasicNameValuePair("password", password));
+            if(email.length()>0)
+                params.add(new BasicNameValuePair("email",email));
+            if(phone.length()>0)
+                params.add(new BasicNameValuePair("phone",phone));
+
+            JSONObject json = jsonParser.makeHttpRequest(URL, "POST", params);
+
+
+            return json;
+
+        }
+
+        protected void onPostExecute(JSONObject result) {
+
+            // dismiss the dialog once product deleted
+            //Toast.makeText(getApplicationContext(),result,Toast.LENGTH_LONG).show();
+
+            try {
+                if (result != null) {
+                    Toast.makeText(getApplicationContext(),result.getString("message"),Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(MainActivity.this,Home.class);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Unable to retrieve any data from server", Toast.LENGTH_LONG).show();
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+        }
+
     }
 }

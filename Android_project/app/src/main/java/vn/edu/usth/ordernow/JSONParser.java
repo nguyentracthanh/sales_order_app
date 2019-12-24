@@ -43,7 +43,7 @@ public class JSONParser {
     // function get json from url
     // by making HTTP POST or GET mehtod
     public JSONObject makeHttpRequest(String url, String method,
-                                      ArrayList params) {
+                                      ArrayList<NameValuePair> params) {
 
         // Making HTTP request
         try {
@@ -103,7 +103,7 @@ public class JSONParser {
             Log.e("Buffer Error", "Error converting result " + e.toString());
         }
 
-        // try to parse the string to a JSON object
+        // try parse the string to a JSON object
         try {
             jObj = new JSONObject(json);
             jObj.put("error_code",error);

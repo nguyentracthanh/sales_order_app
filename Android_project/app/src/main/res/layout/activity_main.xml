@@ -1,71 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/back_ground"
-    android:scaleX="1"
-    android:scaleY="1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:background="@color/colorWhite"
+
     tools:context="vn.edu.usth.ordernow.MainActivity">
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ImageView
-            android:src="@drawable/logo"
-            android:layout_width="220dp"
-            android:layout_height="220dp"/>
-        <TextView
-            android:gravity="center"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:text="@string/text_slogan"
-            android:textColor="@color/colorWhite"
-            android:id="@+id/text_slogan"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:weightSum="2"
-        android:layout_marginBottom="20dp"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <info.hoang8f.widget.FButton
-            android:id="@+id/btn_signup"
-            android:text="SignUp"
-            android:textColor="@color/colorWhite"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_margin  ="8dp"
-            app:fButtonColor="@color/btnSignUp"
-            app:shadowColor="@color/black"
-            app:shadowEnabled="true"
-            app:shadowHeight="5dp"
-            app:cornerRadius="4dp"/>
 
-        <info.hoang8f.widget.FButton
-            android:id="@+id/btn_signin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp"
-            android:layout_weight="1"
-            android:text="SignIn"
-            android:textColor="@color/colorWhite"
-            app:fButtonColor="@color/btnSignActive"
-            app:cornerRadius="4dp"
-            app:shadowColor="@color/black"
-            app:shadowEnabled="true"
-            app:shadowHeight="5dp" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:id="@+id/linearLayout">
 
 
 
-    </LinearLayout>
+            <EditText android:id="@+id/editName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColor="#FF192133"
+                android:textColorHint="#A0192133"
+                android:fontFamily="sans-serif-light"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <EditText android:id="@+id/editPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="#FF192133"
+                android:textColorHint="#A0192133"
+                android:fontFamily="sans-serif-light"
+                android:hint="Password"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <EditText android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="#FF192133"
+                android:visibility="gone"
+                android:textColorHint="#A0192133"
+                android:fontFamily="sans-serif-light"
+                android:hint="Email"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+            <EditText android:id="@+id/editPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="#FF192133"
+                android:visibility="gone"
+                android:textColorHint="#A0192133"
+                android:fontFamily="sans-serif-light"
+                android:hint="Phone"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
 
 
-</RelativeLayout>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnSignIn"
+                android:text="SIGN IN"
+                android:textStyle="bold"
+                />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnRegister"
+                android:text="REGISTER"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
