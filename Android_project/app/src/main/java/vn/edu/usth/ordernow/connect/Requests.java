@@ -1,12 +1,15 @@
-package vn.edu.usth.ordernow.Model;
+package vn.edu.usth.ordernow.connect;
 
 import java.util.List;
+
+import vn.edu.usth.ordernow.Model.Order;
 
 public class Requests {
 
     private String Name;
-    private String Phone;
+    private String ProductId;
     private String total;
+    private String Phone;
     private List<Order> foods;
 
     public Requests() {

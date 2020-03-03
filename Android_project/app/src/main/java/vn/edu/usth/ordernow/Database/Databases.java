@@ -17,6 +17,8 @@ public class Databases extends SQLiteOpenHelper {
     private static final String ORDER_DETAIL = "OrderDetail";
     private static final String DB_NAME="database.db";
     private static final int DB_VER=1;
+    public static final String COLUMN_ID = "ID";
+
     public Databases(Context context) {
         super( context, DB_NAME, null , DB_VER);
     }
@@ -86,7 +88,12 @@ public class Databases extends SQLiteOpenHelper {
         String query=String.format("DELETE FROM OrderDetail");
         db.execSQL(query);
     }
-
+    public Cursor getUnsyncedNames() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String sql = "SELECT * FROM " + ORDER_DETAIL ;
+        Cursor c = db.rawQuery(sql, null);
+        return c;
+    }
 
 
 }

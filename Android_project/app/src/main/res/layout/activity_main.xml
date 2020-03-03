@@ -8,19 +8,39 @@
     android:background="@color/colorWhite"
 
     tools:context="vn.edu.usth.ordernow.MainActivity">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:id="@+id/slogan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The customer is always right!"
+            android:textSize="@dimen/_26sdp"
+            android:textStyle="italic|bold" />
         <LinearLayout
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_below="@+id/slogan"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:paddingLeft="24dp"
             android:paddingRight="24dp"
-            android:id="@+id/linearLayout">
+            android:id="@+id/linearLayout"
+            android:gravity="center">
 
+"
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logo"
+                android:layout_marginBottom="@dimen/_15sdp"/>
 
 
             <EditText android:id="@+id/editName"
@@ -31,7 +51,8 @@
                 android:textColorHint="#A0192133"
                 android:fontFamily="sans-serif-light"
                 android:focusable="true"
-                android:focusableInTouchMode="true" />
+                android:focusableInTouchMode="true"
+                android:maxLines="1"/>
 
             <EditText android:id="@+id/editPassword"
                 android:layout_width="match_parent"
@@ -42,7 +63,9 @@
                 android:fontFamily="sans-serif-light"
                 android:hint="Password"
                 android:focusable="true"
-                android:focusableInTouchMode="true" />
+                android:focusableInTouchMode="true"
+                android:maxLines="1"
+                android:maxLength="16"/>
 
             <EditText android:id="@+id/editEmail"
                 android:layout_width="match_parent"
@@ -54,7 +77,8 @@
                 android:fontFamily="sans-serif-light"
                 android:hint="Email"
                 android:focusable="true"
-                android:focusableInTouchMode="true" />
+                android:focusableInTouchMode="true"
+                android:maxLines="1"/>
             <EditText android:id="@+id/editPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -65,23 +89,29 @@
                 android:fontFamily="sans-serif-light"
                 android:hint="Phone"
                 android:focusable="true"
-                android:focusableInTouchMode="true" />
+                android:focusableInTouchMode="true"
+                android:maxLines="1"
+                android:maxLength="11"/>
 
 
             <Button
+                android:layout_marginTop="@dimen/_20sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnSignIn"
                 android:text="SIGN IN"
                 android:textStyle="bold"
+                android:background="@drawable/botron_button"
                 />
 
             <Button
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnRegister"
                 android:text="REGISTER"
                 android:textStyle="bold"
+                android:background="@drawable/custom_register"
                 />
 
         </LinearLayout>

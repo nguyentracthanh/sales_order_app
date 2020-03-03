@@ -7,6 +7,7 @@
         private $db;
         
         private $db_table = "staff";
+		private $db_table_request="request";
         
         public function __construct(){
             $this->db = new DbConnect();
@@ -15,6 +16,26 @@
         public function isLoginExist($username, $password){
             
             $query = "select * from ".$this->db_table." where username = '$username' AND password = '$password' Limit 1";
+            
+            $result = mysqli_query($this->db->getDb(), $query);
+            
+            if(mysqli_num_rows($result) > 0){
+                
+                mysqli_close($this->db->getDb());
+                
+                
+                return true;
+                
+            }
+            
+            mysqli_close($this->db->getDb());
+            
+            return false;
+            
+        }
+		public function isCart($username ){
+            
+            $query = "select * from ".$this->db_table_request." where username = '$username' ";
             
             $result = mysqli_query($this->db->getDb(), $query);
             
@@ -124,5 +145,18 @@
             }
             return $json;
         }
+		
+		public function cart($username){
+			$json=array{};
+			$canCart=$this->isCart($username);
+			if($canCart){
+				$json['success'] = 1;
+                $json['message'] = "Successfully cart";
+			}else{
+				$json['success'] = 0;
+                $json['message'] = "Fail cart";
+			}
+			return $json;
+		}
     }
     ?>

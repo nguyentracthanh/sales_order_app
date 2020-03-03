@@ -1,6 +1,7 @@
 <?php
     
     require_once 'user.php';
+	
     
     $username = "";
     
@@ -10,8 +11,23 @@
 	
 	$phone = "";
 
+	$total="";
+	
+	$list_food="";
+	
+	
+	if(isset($_POST['total'])){
+        
+        $total = $_POST['total'];
+        
+    }
+	if(isset($_POST['list_food'])){
+        
+        $list_food = $_POST['list_food'];
+        
+    }
     
-    if(isset($_POST['username'])){
+   if(isset($_POST['username'])){
         
         $username = $_POST['username'];
         
@@ -33,7 +49,6 @@
         $email = $_POST['email'];
         
     }
-    
     
     
     $userObject = new User();
@@ -60,4 +75,12 @@
         
         echo json_encode($json_array);
     }
+	
+	//request
+	if(!empty($username) && !empty($list_food) && !empty($total)){
+		$json_array=$userObject->cart($username);
+		echo json_encode($json_array);
+	}
+	
+	
     ?>
